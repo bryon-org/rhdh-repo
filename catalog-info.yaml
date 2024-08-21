@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name:  challenge3-backend
+  description: "Globex Backend Service"
+  annotations:
+    backstage.io/managed-by-location: "url:https://github.com/my-org/my-repo/blob/master/my-backend.yaml"
+spec:
+  type: service
+  lifecycle: production
+  owner: dev-team
+  system: globex-system
+  dependsOn:
+    - resource:globex-database
+  providesApis:
+    - globex-api
